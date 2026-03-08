@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prachi Singh — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #e8edf3;
+    font-family: 'Open Sans', sans-serif;
+    padding: 36px 20px;
+    color: #2d3748;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: #f0f4f8;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+      0 2px 0 rgba(255,255,255,0.8) inset,
+      0 20px 60px rgba(0,0,0,0.18),
+      0 6px 20px rgba(0,0,0,0.1);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8e 60%, #1a3a6e 100%);
+    padding: 44px 48px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  .job-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #93c5fd;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .contact-pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: #dbeafe;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .avatar {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3), 0 0 0 3px rgba(255,255,255,0.15);
+  }
+
+  /* ── BODY ── */
+  .body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: #dce6f0;
+    padding: 32px 24px;
+    box-shadow: inset -4px 0 12px rgba(0,0,0,0.05);
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main {
+    background: #f0f4f8;
+    padding: 32px 36px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #2d5a8e;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #bdd3e8;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  /* ── CARDS (subtle 3D) ── */
+  .card {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,1) inset,
+      0 4px 12px rgba(0,0,0,0.08),
+      0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  /* ── SKILLS ── */
+  .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #374151;
+  }
+
+  .skill-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #2d5a8e;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 2px rgba(45,90,142,0.2);
+  }
+
+  /* ── LANGUAGE ── */
+  .lang-item { margin-bottom: 14px; }
+  .lang-name { font-size: 12.5px; font-weight: 600; color: #374151; margin-bottom: 5px; display: flex; justify-content: space-between; }
+  .lang-level-text { font-size: 10.5px; color: #6b7280; font-weight: 400; }
+  .lang-bar {
+    height: 6px;
+    background: #c8d8e8;
+    border-radius: 100px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .lang-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, #2d5a8e, #3b82f6);
+    box-shadow: 0 1px 3px rgba(45,90,142,0.4);
+  }
+
+  /* ── PERSONAL INFO ── */
+  .info-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .info-icon { font-size: 13px; margin-top: 1px; }
+  .info-label { font-size: 9.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #6b7280; margin-bottom: 1px; }
+  .info-val { font-size: 12px; color: #374151; line-height: 1.5; }
+
+  /* ── HOBBIES ── */
+  .hobby {
+    display: inline-block;
+    background: #dce6f0;
+    border: 1px solid #bdd3e8;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: #2d5a8e;
+    margin: 3px 3px 3px 0;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.07);
+  }
+
+  /* ── OBJECTIVE ── */
+  .objective-text {
+    font-size: 12.5px;
+    line-height: 1.8;
+    color: #4b5563;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-card {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px 16px 16px 20px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255,255,255,0.9);
+    border-left: 3px solid #2d5a8e;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07), 0 1px 0 white inset;
+  }
+
+  .edu-degree { font-family: 'Montserrat', sans-serif; font-size: 13.5px; font-weight: 700; color: #1e3a5f; margin-bottom: 2px; }
+  .edu-school { font-size: 12px; color: #2d5a8e; font-weight: 600; margin-bottom: 3px; }
+  .edu-date {
+    display: inline-block;
+    background: #dce6f0;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 10.5px;
+    color: #4b6a8e;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .edu-desc { font-size: 11.5px; color: #6b7280; line-height: 1.6; }
+
+  /* ── STRENGTHS ── */
+  .strength-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .strength-item {
+    background: #f8fafc;
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.07), 0 1px 0 white inset;
+  }
+
+  .strength-icon { font-size: 22px; margin-bottom: 5px; }
+  .strength-title { font-size: 11px; font-weight: 700; color: #1e3a5f; font-family: 'Montserrat', sans-serif; margin-bottom: 2px; }
+  .strength-sub { font-size: 10px; color: #6b7280; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <div>
+        <div class="name">Prachi Singh</div>
+        <div class="job-title">Accountant &amp; Sales Professional</div>
+        <div class="contact-row">
+          <span class="contact-pill">📍 Janakpuri West, New Delhi</span>
+          <span class="contact-pill">📞 +91 81305 83560</span>
+        </div>
+      </div>
+      <div class="avatar">PS</div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Skills -->
+      <div class="sec-title">⚙ Skills</div>
+      <div class="card" style="margin-bottom:20px">
+        <div class="skill-item"><span class="skill-dot"></span> MS Excel</div>
+        <div class="skill-item"><span class="skill-dot"></span> MS Word</div>
+        <div class="skill-item"><span class="skill-dot"></span> Tally</div>
+        <div class="skill-item"><span class="skill-dot"></span> Accounting</div>
+        <div class="skill-item"><span class="skill-dot"></span> Communication</div>
+        <div class="skill-item" style="margin-bottom:0"><span class="skill-dot"></span> CRM</div>
+      </div>
+
+      <!-- Languages -->
+      <div class="sec-title">◉ Languages</div>
+      <div style="margin-bottom:20px">
+        <div class="lang-item">
+          <div class="lang-name">Hindi <span class="lang-level-text">Proficient</span></div>
+          <div class="lang-bar"><div class="lang-fill" style="width:80%"></div></div>
+        </div>
+        <div class="lang-item" style="margin-bottom:0">
+          <div class="lang-name">English <span class="lang-level-text">Basic</span></div>
+          <div class="lang-bar"><div class="lang-fill" style="width:38%"></div></div>
+        </div>
+      </div>
+
+      <!-- Personal -->
+      <div class="sec-title">✦ Personal</div>
+      <div class="card">
+        <div class="info-row">
+          <span class="info-icon">📍</span>
+          <div>
+            <div class="info-label">Address</div>
+            <div class="info-val">Possangipur, Janakpuri West,<br>New Delhi – 110058</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="info-icon">🌏</span>
+          <div>
+            <div class="info-label">Nationality</div>
+            <div class="info-val">Indian</div>
+          </div>
+        </div>
+        <div class="info-row" style="margin-bottom:0">
+          <span class="info-icon">🎯</span>
+          <div>
+            <div class="info-label">Hobbies</div>
+            <div style="margin-top:5px">
+              <span class="hobby">📚 Reading</span>
+              <span class="hobby">✈️ Travel</span>
+              <span class="hobby">🎵 Singing</span>
+              <span class="hobby">🏋️ Gym</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+      <!-- Objective -->
+      <div class="sec-title">▸ Career Objective</div>
+      <div class="card" style="margin-bottom:24px">
+        <p class="objective-text">
+          Motivated and detail-oriented commerce student seeking an opportunity in Accounting and Sales. Hardworking and responsible with foundational knowledge in accounting practices and sales operations. Eager to learn new skills, contribute to organisational growth, and deliver consistent results through sincere daily effort and effective teamwork.
+        </p>
+      </div>
+
+      <!-- Education -->
+      <div class="sec-title">▸ Education</div>
+
+      <div class="edu-card">
+        <div class="edu-degree">🎓 B.Com — Bachelor of Commerce</div>
+        <div class="edu-school">DU SOL, University of Delhi</div>
+        <div class="edu-date">Aug 2025 – Aug 2028 &nbsp;·&nbsp; Pursuing</div>
+        <div class="edu-desc">Focus: Financial Accounting, Business Law & Economics. Developing skills in financial statement analysis, budgeting, basic taxation, and spreadsheet data analysis.</div>
+      </div>
+
+      <div class="edu-card" style="margin-bottom:24px">
+        <div class="edu-degree">💻 Computer Course</div>
+        <div class="edu-school">MONGIA Computer Institute</div>
+        <div class="edu-date">Jan 2023 – Feb 2024</div>
+        <div class="edu-desc">Foundational computer training including MS Office applications and practical software skills.</div>
+      </div>
+
+      <!-- Strengths -->
+      <div class="sec-title">▸ Key Strengths</div>
+      <div class="strength-grid">
+        <div class="strength-item">
+          <div class="strength-icon">📋</div>
+          <div class="strength-title">Accounting Basics</div>
+          <div class="strength-sub">Tally, Excel, bookkeeping</div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-icon">🤝</div>
+          <div class="strength-title">Sales Handling</div>
+          <div class="strength-sub">CRM, client operations</div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-icon">💡</div>
+          <div class="strength-title">Quick Learner</div>
+          <div class="strength-sub">Eager to upskill & grow</div>
+        </div>
+        <div class="strength-item">
+          <div class="strength-icon">👥</div>
+          <div class="strength-title">Team Player</div>
+          <div class="strength-sub">Reliable & collaborative</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
